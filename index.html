@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+     <section class="hero">
+    <div class="container">
+      <nav class="navbar">
+        <h1 class="logo">VIN&nbsp;<span style="font-size: 20px;">POSTERS</span></h1>
+
+        <!-- Hamburger icon -->
+        <div class="menu-icon" onclick="toggleMenu()">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#Home">Home</a></li>
+          <li><a href="#courses">Service</a></li>
+          <li><a href="#courses">Product</a></li>
+          <li><a href="#About">About</a></li>
+          <li><a href="#Contact">Contact</a></li>
+        </ul>
+      </nav>
+<br>
+<br>
+      <div class="content">
+        <h3>Decorate walls with beauty that always lifts your mood.</h3>
+        <p>Let Your Walls Tell Stories.</p>
+  <a href="course.html" class="btn">Shop Posters<span class="arrow">&nbsp;&nbsp;→</span></a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+
+
+
+
+
+<script>
+    function toggleMenu() {
+      const navLinks = document.getElementById("navLinks");
+      navLinks.classList.toggle("active");
+    }
+  </script>
