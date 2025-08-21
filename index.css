@@ -276,46 +276,6 @@ button:hover {
 
 
 
-/* Default styles (already you wrote) */
-
-/* Responsive Design for Mobile */
-@media (max-width: 480px) {
-  .categories-wrapper {
-    flex-direction: column; /* stack vertically */
-    gap: 30px; /* smaller gap */
-  }
-
-  .category-box {
-    width: 90%; /* take most of the screen */
-    margin: 0 auto; /* center the box */
-    padding: 15px;
-  }
-
-  .category-img {
-    height: 200px; /* smaller height for mobile */
-  }
-
-  .category-box h3 {
-    font-size: 18px;
-  }
-
-  .category-box p {
-    font-size: 13px;
-  }
-
-  .explore-btn {
-    font-size: 14px;
-    padding: 8px 18px;
-  }
-
-  h2 {
-    font-size: 28px !important; /* reduce heading size */
-  }
-
-  p {
-    font-size: 18px !important; /* reduce subheading */
-  }
-}
 
 
 /* <!-- -------------------------------------------------------------------------------------------- --> */
