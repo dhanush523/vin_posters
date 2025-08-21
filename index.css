@@ -283,8 +283,8 @@ button:hover {
   }
 
   .category-box {
-    width: 90%;               /* take almost full width */
-    max-width: 350px;         /* don’t go too wide */
+    width: 80%;               /* take almost full width */
+    max-width: 4000px;         /* don’t go too wide */
     padding: 15px;
   }
 
