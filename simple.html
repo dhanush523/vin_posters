@@ -1,121 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .categories-section {
-  display: flex;
-  justify-content: center;
-  margin: 40px auto;
-}
-
-.categories-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-}
-
-.category-box {
-  width: 300px;
-  background: #fff;
-  border-radius: 12px;
-  text-align: center;
-  padding: 20px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.category-box:hover {
-  transform: translateY(-8px);
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .category-box {
+  width: 300px;              /* box width */
+  border: 2px solid #ccc;    /* border around box */
+  border-radius: 12px;       /* rounded corners */
+  padding: 15px;             /* inner space */
+  text-align: center;        /* center text */
+  background: #fff;          /* box background */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* soft shadow */
+  margin: 20px;              /* space between boxes */
 }
 
 .category-img {
-  width: 100%;
-  height: 310px;
-  object-fit: cover; /* keeps aspect ratio */
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-.category-box h3 {
-  font-size: 20px;
-  margin-bottom: 12px;
-  color: #222;
-}
-
-.category-box p {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 20px;
-  line-height: 1.5;
+  width: 100%;               /* fit inside box */
+  height: 400px;             /* fixed height */
+  object-fit: contain;         /* crop image neatly */
+  border-radius: 10px;       /* round image corners */
+  margin-bottom: 10px;
 }
 
 .explore-btn {
   display: inline-block;
-  padding: 10px 18px;
-  background: #007BFF;
+  padding: 8px 15px;
+  background: #000;
   color: #fff;
   text-decoration: none;
   border-radius: 6px;
-  font-size: 14px;
-  transition: background 0.3s;
+  margin-top: 10px;
+  transition: 0.3s;
 }
 
 .explore-btn:hover {
-  background: #0056b3;
+  background: #444;
 }
 
-.arrow {
-  margin-left: 5px;
-}
-
-    </style>
+  </style>
 </head>
 <body>
-    
-    <section id="categories">
-  <h2 style="color: #0c0c0c; text-align: center; margin-bottom: 40px; font-size: 40px;">
-    Poster Categories
-  </h2>
-  <h3 style="text-align: center; font-size: 32px; font-family: 'Playfair Display', serif;">
-    Explore Different Types of Posters
-  </h3>
-
-  <div class="categories-section">
-    <div class="categories-wrapper">
-
-      <div class="category-box">
-        <img src="main.png" alt="Movie Posters" class="category-img">
+  <div class="category-box">
+        <img src="3.jpg" alt="Movie Posters" class="category-img">
         <h3>Movie Posters</h3>
-        <!-- <p>Discover trending movie posters from your favorite films and actors.</p> -->
         <a href="movie.html" class="explore-btn">Explore Movies</a>
       </div>
-
-      <div class="category-box">
-        <img src="motivation.png" alt="Motivational Posters" class="category-img">
-        <h3>Motivational Posters</h3>
-        <p>Boost your day with inspiring motivational poster collections.</p>
-        <a href="motivation.html" class="explore-btn">Explore Motivation</a>
-      </div>
-
-      <div class="category-box">
-        <img src="sports.png" alt="Sports Posters" class="category-img">
-        <h3>Sports Posters</h3>
-        <p>Celebrate your favorite players and teams with sports posters.</p>
-        <a href="sports.html" class="explore-btn">Explore Sports</a>
-      </div>
-
-    </div>
-  </div>
-
-  <div style="text-align: center; margin-top: 30px;">
-    <a href="categories.html" class="explore-btn">View All Categories <span class="arrow">→</span></a>
-  </div>
-</section>
-
-
 </body>
 </html>
