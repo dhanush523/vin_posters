@@ -274,6 +274,46 @@ button:hover {
 }
 
 
+/* 🔹 Responsive for mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .categories-wrapper {
+    flex-direction: column;   /* stack cards vertically */
+    gap: 30px;                /* reduce spacing */
+    align-items: center;      /* center align */
+  }
+
+  .category-box {
+    width: 90%;               /* take almost full width */
+    max-width: 350px;         /* don’t go too wide */
+    padding: 15px;
+  }
+
+  .category-img {
+    height: 200px;            /* smaller image */
+  }
+
+  .category-box h3 {
+    font-size: 18px;
+  }
+
+  .category-box p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .explore-btn {
+    font-size: 14px;
+    padding: 8px 18px;
+  }
+
+  #categories h2 {
+    font-size: 26px !important; /* smaller heading */
+  }
+
+  #categories p {
+    font-size: 18px !important; /* smaller subheading */
+  }
+}
 
 
 
