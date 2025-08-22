@@ -1,141 +1,186 @@
-<footer>
-  <div class="footer-container">
-    <!-- About Section -->
-    <div class="footer-box">
-      <h3>Vin Posters</h3>
-      <p>We design and print high-quality posters with a focus on creativity, durability, and customer satisfaction.</p>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vin Posters - About</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fafafa;
+      color: #222;
+    }
 
-    <!-- Quick Links -->
-    <div class="footer-box">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
+    /* About Section */
+    #about {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      padding: 80px 20px;
+      color: #fff;
+    }
 
-    <!-- Contact Info -->
-    <div class="footer-box">
-      <h3>Contact Us</h3>
-      <p><i class="fas fa-map-marker-alt"></i> Chennai, India</p>
-      <p><i class="fas fa-phone"></i> +91 98765 43210</p>
-      <p><i class="fas fa-envelope"></i> support@vinposters.com</p>
-    </div>
+    .about-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: auto;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
 
-    <!-- Newsletter -->
-    <div class="footer-box">
-      <h3>Subscribe</h3>
-      <p>Get the latest offers and updates straight to your inbox.</p>
-      <form class="subscribe-form">
-        <input type="email" placeholder="Enter your email" required>
-        <button type="submit"><i class="fas fa-paper-plane"></i></button>
-      </form>
+    .about-text {
+      flex: 1;
+    }
+    .about-text h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #ffefba;
+      text-transform: uppercase;
+    }
+    .about-text p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #f1f1f1;
+    }
+
+    .about-img {
+      flex: 1;
+      text-align: center;
+    }
+    .about-img img {
+      width: 85%;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+    }
+    .about-img img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Why Choose Us Section */
+    .why-choose-us {
+      background: #fff;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .why-choose-us h2 {
+      font-size: 34px;
+      margin-bottom: 60px;
+      color: #6a11cb;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .feature-box {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: #fff;
+      padding: 35px 25px;
+      border-radius: 18px;
+      transition: 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .feature-box::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.2), transparent 60%);
+      transform: rotate(25deg);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .feature-box:hover::after {
+      opacity: 1;
+    }
+    .feature-box:hover {
+      transform: translateY(-8px);
+    }
+    .feature-box i {
+      font-size: 45px;
+      margin-bottom: 18px;
+      color: #ffefba;
+    }
+    .feature-box h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    .feature-box p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #eee;
+    }
+
+    /* Responsive */
+    @media(max-width: 900px) {
+      .about-section {
+        flex-direction: column;
+        text-align: center;
+      }
+      .about-img img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- About Section -->
+  <section id="about">
+    <div class="about-section">
+      <div class="about-text">
+        <h2>Who We Are</h2>
+        <p>
+          At Vin Posters, we believe every poster tells a story. Our mission is to design creative, professional, and eye-catching posters that inspire and connect with people. Whether it’s for movies, events, businesses, or personal occasions, we craft visuals that stand out and leave a lasting impression. Over the next 100 days, we are committed to building a trusted brand by focusing on quality, originality, and customer satisfaction.
+        </p>
+      </div>
+      <div class="about-img">
+        <img src="main.png" alt="Our Team">
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <div class="why-choose-us">
+    <h2>Why Choose Us?</h2>
+    <div class="features">
+      <div class="feature-box">
+        <i class="fas fa-print"></i>
+        <h3>High-Quality Printing</h3>
+        <p>Premium materials with vibrant colors and long-lasting durability.</p>
+      </div>
+      <div class="feature-box">
+        <i class="fas fa-paint-brush"></i>
+        <h3>Custom Creations</h3>
+        <p>Upload your images or designs and create truly personalized posters.</p>
+      </div>
+      <div class="feature-box">
+        <i class="fas fa-tags"></i>
+        <h3>Exclusive Offers</h3>
+        <p>Get exciting discounts and deals on your favorite poster designs.</p>
+      </div>
+      <div class="feature-box">
+        <i class="fas fa-truck"></i>
+        <h3>Free Shipping</h3>
+        <p>Enjoy free delivery on prepaid orders—hassle-free and convenient.</p>
+      </div>
     </div>
   </div>
 
-  <div class="footer-bottom">
-    <p>&copy; 2025 Vin Posters. All Rights Reserved.</p>
-  </div>
-</footer>
-
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<style>
-footer {
-  background: #111;
-  color: #fff;
-  padding: 50px 20px 20px;
-}
-
-.footer-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  max-width: 1100px;
-  margin: auto;
-}
-
-.footer-box h3 {
-  margin-bottom: 15px;
-  font-size: 18px;
-  color: #fff;
-}
-
-.footer-box p, 
-.footer-box a {
-  font-size: 14px;
-  color: #ccc;
-  line-height: 1.6;
-  text-decoration: none;
-}
-
-.footer-box a:hover {
-  color: #fff;
-}
-
-.footer-box ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-box ul li {
-  margin-bottom: 10px;
-}
-
-.social-icons a {
-  display: inline-block;
-  margin-right: 10px;
-  font-size: 18px;
-  color: #ccc;
-  transition: color 0.3s;
-}
-
-.social-icons a:hover {
-  color: #fff;
-}
-
-.subscribe-form {
-  display: flex;
-  margin-top: 10px;
-}
-
-.subscribe-form input {
-  flex: 1;
-  padding: 10px;
-  border: none;
-  border-radius: 6px 0 0 6px;
-  outline: none;
-  font-size: 14px;
-}
-
-.subscribe-form button {
-  padding: 10px 15px;
-  border: none;
-  background: #f4c542;
-  color: #111;
-  font-size: 16px;
-  border-radius: 0 6px 6px 0;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.subscribe-form button:hover {
-  background: #e0b733;
-}
-
-.footer-bottom {
-  text-align: center;
-  padding-top: 20px;
-  border-top: 1px solid #333;
-  margin-top: 30px;
-}
-
-.footer-bottom p {
-  font-size: 14px;
-  color: #aaa;
-}
-</style>
+</body>
+</html>
