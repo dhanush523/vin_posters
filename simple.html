@@ -1,51 +1,141 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    .category-box {
-  width: 300px;              /* box width */
-  border: 2px solid #ccc;    /* border around box */
-  border-radius: 12px;       /* rounded corners */
-  padding: 15px;             /* inner space */
-  text-align: center;        /* center text */
-  background: #fff;          /* box background */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* soft shadow */
-  margin: 20px;              /* space between boxes */
+<footer>
+  <div class="footer-container">
+    <!-- About Section -->
+    <div class="footer-box">
+      <h3>Vin Posters</h3>
+      <p>We design and print high-quality posters with a focus on creativity, durability, and customer satisfaction.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-box">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-box">
+      <h3>Contact Us</h3>
+      <p><i class="fas fa-map-marker-alt"></i> Chennai, India</p>
+      <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+      <p><i class="fas fa-envelope"></i> support@vinposters.com</p>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="footer-box">
+      <h3>Subscribe</h3>
+      <p>Get the latest offers and updates straight to your inbox.</p>
+      <form class="subscribe-form">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Vin Posters. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+footer {
+  background: #111;
+  color: #fff;
+  padding: 50px 20px 20px;
 }
 
-.category-img {
-  width: 100%;               /* fit inside box */
-  height: 400px;             /* fixed height */
-  object-fit: contain;         /* crop image neatly */
-  border-radius: 10px;       /* round image corners */
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.footer-box h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.footer-box p, 
+.footer-box a {
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+.footer-box a:hover {
+  color: #fff;
+}
+
+.footer-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-box ul li {
   margin-bottom: 10px;
 }
 
-.explore-btn {
+.social-icons a {
   display: inline-block;
-  padding: 8px 15px;
-  background: #000;
+  margin-right: 10px;
+  font-size: 18px;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
   color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
+}
+
+.subscribe-form {
+  display: flex;
   margin-top: 10px;
+}
+
+.subscribe-form input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 6px 0 0 6px;
+  outline: none;
+  font-size: 14px;
+}
+
+.subscribe-form button {
+  padding: 10px 15px;
+  border: none;
+  background: #f4c542;
+  color: #111;
+  font-size: 16px;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
   transition: 0.3s;
 }
 
-.explore-btn:hover {
-  background: #444;
+.subscribe-form button:hover {
+  background: #e0b733;
 }
 
-  </style>
-</head>
-<body>
-  <div class="category-box">
-        <img src="3.jpg" alt="Movie Posters" class="category-img">
-        <h3>Movie Posters</h3>
-        <a href="movie.html" class="explore-btn">Explore Movies</a>
-      </div>
-</body>
-</html>
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  margin-top: 30px;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  color: #aaa;
+}
+</style>
