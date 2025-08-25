@@ -260,8 +260,8 @@
       <h2 id="popup-title">Book Your Poster</h2>
       <p>Select your preferred way to contact us and place your order.</p>
       <a id="whatsapp-link" class="whatsapp-btn" href="#" target="_blank">📲 WhatsApp: +91 9360362776</a>
-      <a id="email-link" class="email-btn" href="#">📧 Email: dhanushshankar74@gmail.com</a>
-      <a id="call-link" class="call-btn" href="#">📞 Call: +91 9360362776</a>
+<a id="email-link" class="email-btn" href="#" onclick="openbuy(event)">📧 Email: dhanushshankar74@gmail.com</a>   
+<a id="call-link" class="call-btn" href="#">📞 Call: +91 9360362776</a>
       <div class="close-btn" onclick="closePopup()">Close</div>
       <p style="color: rgb(7, 7, 7);font-size: 18px;">“Available in every size you need.”</p>
     </div>
@@ -298,7 +298,39 @@
     event.preventDefault();
     const email = "dhanushshankar74@gmail.com";
     const subject = "Poster Request";
-    const body = "Hello, I would like to order a custom poster.";
+    const body = "Hello, I would like to order a custom poster,add photo in drive and size and quatity.";
+
+    // Encode subject & body
+    const subjectEncoded = encodeURIComponent(subject);
+    const bodyEncoded = encodeURIComponent(body);
+
+    // Android Gmail App Intent
+    const androidIntent = `intent://compose?to=${email}&subject=${subjectEncoded}&body=${bodyEncoded}#Intent;scheme=mailto;package=com.google.android.gm;end`;
+
+    // Gmail Web link (fallback)
+    const gmailWeb = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subjectEncoded}&body=${bodyEncoded}`;
+
+    // Detect Android
+    if (/Android/i.test(navigator.userAgent)) {
+      // Open Gmail app directly
+      window.location.href = androidIntent;
+
+      // Safety fallback if Intent fails
+      setTimeout(() => {
+        window.open(gmailWeb, "_blank");
+      }, 800);
+    } else {
+      // For desktop, iOS, etc. → Gmail Web
+      window.open(gmailWeb, "_blank");
+    }
+  }
+
+
+  function openbuy(event) {
+    event.preventDefault();
+    const email = "dhanushshankar74@gmail.com";
+    const subject = "Poster Request";
+    const body = "I want this type of posters";
 
     // Encode subject & body
     const subjectEncoded = encodeURIComponent(subject);
