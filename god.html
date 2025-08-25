@@ -269,10 +269,7 @@
 
 
 
-<a class="btn" 
-   href="https://mail.google.com/mail/?view=cm&fs=1&to=dhanushshankar74@gmail.com&su=Poster%20Request&body=Hello,%20I%20would%20like%20to%20order%20a%20custom%20poster." 
-   target="_blank" 
-   rel="noopener noreferrer">
+<a class="btn" href="#" onclick="openGmail(event)">
   Email for Custom Poster
 </a>
 
@@ -295,6 +292,36 @@
     function closePopup() {
       document.getElementById("popup").style.display = "none";
     }
+
+
+  function openGmail(event) {
+    event.preventDefault();
+    const email = "dhanushshankar74@gmail.com";
+    const subject = "Poster Request";
+    const body = "Hello, I would like to order a custom poster.";
+
+    // Encode for URLs
+    const subjectEncoded = encodeURIComponent(subject);
+    const bodyEncoded = encodeURIComponent(body);
+
+    // Gmail App deep link
+    const gmailApp = `googlegmail://co?to=${email}&subject=${subjectEncoded}&body=${bodyEncoded}`;
+    // Gmail Web link
+    const gmailWeb = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subjectEncoded}&body=${bodyEncoded}`;
+
+    // Detect mobile
+    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+      window.location.href = gmailApp;
+
+      // Fallback to Gmail Web if Gmail app is not installed
+      setTimeout(() => {
+        window.open(gmailWeb, "_blank");
+      }, 500);
+    } else {
+      // Desktop/laptop → Open Gmail Web
+      window.open(gmailWeb, "_blank");
+    }
+  }
   </script>
 
 </body>
