@@ -269,7 +269,7 @@
 
 
 
-<a class="btn" href="#" onclick="openGmail(event)">
+<a class="btn" href="#" onclick="openEmail(event)">
   Email for Custom Poster
 </a>
 
@@ -294,31 +294,33 @@
     }
 
 
-  function openGmail(event) {
+  function openEmail(event) {
     event.preventDefault();
     const email = "dhanushshankar74@gmail.com";
     const subject = "Poster Request";
     const body = "Hello, I would like to order a custom poster.";
 
-    // Encode for URLs
+    // Encode subject & body
     const subjectEncoded = encodeURIComponent(subject);
     const bodyEncoded = encodeURIComponent(body);
 
-    // Gmail App deep link
-    const gmailApp = `googlegmail://co?to=${email}&subject=${subjectEncoded}&body=${bodyEncoded}`;
-    // Gmail Web link
+    // Android Gmail App Intent
+    const androidIntent = `intent://compose?to=${email}&subject=${subjectEncoded}&body=${bodyEncoded}#Intent;scheme=mailto;package=com.google.android.gm;end`;
+
+    // Gmail Web link (fallback)
     const gmailWeb = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subjectEncoded}&body=${bodyEncoded}`;
 
-    // Detect mobile
-    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-      window.location.href = gmailApp;
+    // Detect Android
+    if (/Android/i.test(navigator.userAgent)) {
+      // Open Gmail app directly
+      window.location.href = androidIntent;
 
-      // Fallback to Gmail Web if Gmail app is not installed
+      // Safety fallback if Intent fails
       setTimeout(() => {
         window.open(gmailWeb, "_blank");
-      }, 500);
+      }, 800);
     } else {
-      // Desktop/laptop → Open Gmail Web
+      // For desktop, iOS, etc. → Gmail Web
       window.open(gmailWeb, "_blank");
     }
   }
