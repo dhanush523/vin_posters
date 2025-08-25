@@ -363,7 +363,17 @@ Thank you!`;
     event.preventDefault();
     const email = "dhanushshankar74@gmail.com";
     const subject = "Poster Request ";
-    const body = "I want this type of posters";
+    
+const body =  `Hello, I’d like to order a custom poster. Here are my details:
+
+- Photo: [Image Code]
+- Poster Size: [A4 or A3]
+- Quantity: [Number of posters]
+- Delivery Address: [Full address]
+- Contact Number: [Your phone number]
+
+Thank you!`
+    
 
     // Encode subject & body
     const subjectEncoded = encodeURIComponent(subject);
@@ -389,6 +399,12 @@ Thank you!`;
       window.open(gmailWeb, "_blank");
     }
   }
+
+
+
+  
+
+  
   </script>
 
 </body>
