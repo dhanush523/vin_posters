@@ -173,6 +173,7 @@
         gap: 15px;
       }
     }
+
   </style>
 </head>
 <body>
@@ -313,10 +314,14 @@
 
 
 
-<a class="btn" href="#" onclick="openEmail(event)">
-  Email for Custom Poster
+<a class="btn" href="#" onclick="openEmail(event)">📧Email </a>
+
+<a class="btn" href="https://wa.me/9360362776?text=Hello,%20I%20want%20to%20order%20a%20custom%20poster" target="_blank" id="whatsapp-links">
+  📲 WhatsApp
 </a>
-<p>If you’d like a custom poster, please email us</p>
+<p>If you’d like a custom poster, please email and whatsapp us </p>
+
+
 
 
 
@@ -361,6 +366,8 @@ Thank you!`
   function openEmail(event) {
     event.preventDefault();
     const email = "dhanushshankar74@gmail.com";
+          const phone = "+919360362776"; 
+
     const subject = "Poster Request";
     // const body = "Hello, I would like to order a custom poster,add photo in drive and size and quatity.";
 
@@ -465,10 +472,27 @@ Thank you!`
 
 
 
-  
+const phoneNumber = "919360362776"; // Replace with your WhatsApp number
+
+const message = `Hello, I’d like to place a custom poster order. and here are my details:%0A
+- Photo: {"Image link or PDF"}%0A
+- Poster Size: {"A4 or A3"}%0A
+- Quantity: {"Number of posters"}%0A
+- Delivery Address: {"Your full address"}%0A
+- Contact Number: {"Your phone number"}%0A%0A
+Bulk Orders – Free Delivery%0A
+A4: ₹49 each | A3: ₹69 each%0A
+Delivery charges apply for single orders.%0A
+Online Payment Only And No Cash on Delivery%0A%0A
+Looking forward to your confirmation.%0A
+Thank you!`;
+
+// Set the WhatsApp link dynamically
+document.getElementById("whatsapp-links").href = `https://wa.me/${phoneNumber}?text=${message}`;
 
   
   </script>
+
 
 </body>
 </html>
