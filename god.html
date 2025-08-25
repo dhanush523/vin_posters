@@ -284,7 +284,18 @@
 
       document.getElementById("popup").style.display = "flex";
       document.getElementById("popup-title").innerText = `Book ${productName}`;
-      document.getElementById("whatsapp-link").href = `https://wa.me/${phone}?text=I%20want%20to%20buy%20${encodeURIComponent(productName)}`;
+document.getElementById("whatsapp-link").href = 
+  `https://wa.me/${phone}?text=${encodeURIComponent(
+    `Hello, I’d like to order a custom poster. Here are my details:
+
+- Photo: [Image Code]
+- Poster Size: [A4 or A3]
+- Quantity: [Number of posters]
+- Delivery Address: [Full address]
+- Contact Number: [Your phone number]
+
+Thank you!`
+  )}`;
       document.getElementById("email-link").href = `mailto:${email}?subject=Booking%20${encodeURIComponent(productName)}`;
       document.getElementById("call-link").href = `tel:${phone}`;
     }
@@ -293,12 +304,34 @@
       document.getElementById("popup").style.display = "none";
     }
 
+ // ------------------------------------------------------------------------------------------------------------------------------------
+   
 
   function openEmail(event) {
     event.preventDefault();
     const email = "dhanushshankar74@gmail.com";
     const subject = "Poster Request";
-    const body = "Hello, I would like to order a custom poster,add photo in drive and size and quatity.";
+    // const body = "Hello, I would like to order a custom poster,add photo in drive and size and quatity.";
+
+    // Fill these variables from your form/input
+const driveLink = "https://drive.google.com/your-photo-link";
+const size = "A3";
+const quantity = 2;
+const address = "No. 12, ABC Street, Chennai - 600001";
+const mobile = "+91 98765 43210";
+
+// Plain message (nice formatting)
+
+const body = `Hello, I’d like to place a custom poster order. I’ve uploaded the photo to Google Drive and here are my details:
+
+- Photo: {"Image link or PDF"}
+- Poster Size: {"A4 or A3"}
+- Quantity: {"Number of posters"}
+- Delivery Address: {"Your full address"}
+- Contact Number: {"Your phone number"}
+
+Looking forward to your confirmation.
+Thank you!`;
 
     // Encode subject & body
     const subjectEncoded = encodeURIComponent(subject);
@@ -325,11 +358,11 @@
     }
   }
 
-
+// ------------------------------------------------------------------------------------------------------------------------------------
   function openbuy(event) {
     event.preventDefault();
     const email = "dhanushshankar74@gmail.com";
-    const subject = "Poster Request";
+    const subject = "Poster Request ";
     const body = "I want this type of posters";
 
     // Encode subject & body
