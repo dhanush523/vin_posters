@@ -3,69 +3,251 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WhatsApp Poster Order</title>
+<title>Poster Collection</title>
 <style>
-  body { font-family: 'Poppins', sans-serif; background: #f5f5f5; padding: 30px; }
-  form { max-width: 500px; margin: auto; background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-  label { display: block; margin-top: 15px; font-weight: bold; }
-  input, select, textarea { width: 100%; padding: 10px; margin-top: 5px; border-radius: 8px; border: 1px solid #ccc; }
-  .btn { margin-top: 20px; padding: 12px; background: #25D366; color: #fff; border: none; border-radius: 50px; font-size: 16px; cursor: pointer; width: 100%; }
-  .btn:hover { background: #128C7E; }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5f5f5;
+    text-align: center;
+    padding: 20px;
+  }
+
+  h1, h2 {
+    color: #0c0c0c;
+    margin-bottom: 20px;
+  }
+
+  p {
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  /* ------------------ PRODUCT GRID ------------------ */
+  .products-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+  }
+
+  .product-box {
+    background: #fff;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .product-box:hover {
+    transform: translateY(-5px);
+  }
+
+  .product-box img {
+    width: 100%;
+    height: 250px;      /* uniform height */
+    object-fit: cover;   /* ensures same size look */
+    border-radius: 12px;
+    margin-bottom: 10px;
+  }
+
+  .price {
+    font-size: 14px;
+    color: #ff4b5c;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .buy-btn {
+    background: linear-gradient(135deg, #25d366, #1ebe57);
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+
+  .buy-btn:hover {
+    background: linear-gradient(135deg, #1ebe57, #25d366);
+  }
+
+  /* ------------------ CATEGORY GRID ------------------ */
+  .categories-section {
+    margin: 50px auto;
+  }
+
+  .categories-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .category-box {
+    width: 300px;
+    background: #fff;
+    border-radius: 28px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .category-box:hover {
+    transform: translateY(-8px);
+  }
+
+  .category-img {
+    width: 100%;
+    height: 250px;      /* uniform size for all categories */
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+  }
+
+  .category-box h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #222;
+  }
+
+  .category-box p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+
+  .explore-btn {
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: #0e0c0c;
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    border: 2px solid transparent;
+  }
+
+  .explore-btn:hover {
+    background-color: #fff;
+    color: #131111;
+    border-color: #000;
+  }
+
+  /* ------------------ RESPONSIVE ------------------ */
+  @media (max-width: 1024px) {
+    .products-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .categories-wrapper {
+      gap: 30px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .products-container {
+      grid-template-columns: 1fr; /* single column on small tablets/mobiles */
+      gap: 20px;
+    }
+
+    .product-box img,
+    .category-img {
+      height: 220px;
+    }
+
+    .category-box {
+      width: 90%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .product-box img,
+    .category-img {
+      height: 180px;
+    }
+
+    .category-box h3,
+    .product-box .price {
+      font-size: 16px;
+    }
+
+    .category-box p {
+      font-size: 12px;
+    }
+
+    .explore-btn, .buy-btn {
+      font-size: 13px;
+      padding: 8px 16px;
+    }
+  }
 </style>
 </head>
 <body>
 
-<form id="posterForm">
-  <h2>Custom Poster Order</h2>
-  
-  <label for="photo">Photo (Link or PDF):</label>
-  <input type="text" id="photo" placeholder="Enter photo link or PDF">
+  <h1>Our Collection of Posters</h1>
+  <p>A4 Size-₹49 || A3 Size-₹69</p>
 
-  <label for="size">Poster Size:</label>
-  <select id="size">
-    <option value="A4">A4</option>
-    <option value="A3">A3</option>
-  </select>
+  <!-- ------------------ PRODUCTS ------------------ -->
+  <div class="products-container">
+    <div class="product-box">
+      <img src="c1.png" alt="Poster">
+      <p class="price">M001</p>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    <div class="product-box">
+      <img src="c2.png" alt="Poster">
+      <p class="price">M002</p>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    <div class="product-box">
+      <img src="c3.png" alt="Poster">
+      <p class="price">M003</p>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    <!-- Add more products as needed -->
+  </div>
 
-  <label for="quantity">Quantity:</label>
-  <input type="number" id="quantity" placeholder="Enter number of posters">
+  <!-- ------------------ CATEGORIES ------------------ -->
+  <section class="categories-section">
+    <h2>Poster Categories</h2>
+    <p>Explore Different Types of Posters</p>
 
-  <label for="address">Delivery Address:</label>
-  <textarea id="address" rows="3" placeholder="Enter your full address"></textarea>
+    <div class="categories-wrapper">
+      <div class="category-box">
+        <img src="cinema.png" alt="Movie Posters" class="category-img">
+        <h3>Movie Posters</h3>
+        <p>Discover trending movie posters from your favorite films.</p>
+        <a href="cinema.html" class="explore-btn">Explore Movies</a>
+      </div>
 
-  <label for="phone">Contact Number:</label>
-  <input type="text" id="phone" placeholder="Enter your phone number">
+      <div class="category-box">
+        <img src="sports.png" alt="Sports Posters" class="category-img">
+        <h3>Sports Posters</h3>
+        <p>Celebrate your favorite players and teams.</p>
+        <a href="sport.html" class="explore-btn">Explore Sports</a>
+      </div>
 
-  <button type="button" class="btn" onclick="sendWhatsApp()">📲 Send via WhatsApp</button>
-</form>
+      <div class="category-box">
+        <img src="motivational.png" alt="Motivational Posters" class="category-img">
+        <h3>Motivational Posters</h3>
+        <p>Boost your day with inspiring motivational posters.</p>
+        <a href="motivational.html" class="explore-btn">Explore Motivation</a>
+      </div>
 
-<script>
-function sendWhatsApp() {
-  const photo = document.getElementById('photo').value || "{Image link or PDF}";
-  const size = document.getElementById('size').value || "A4";
-  const quantity = document.getElementById('quantity').value || "1";
-  const address = document.getElementById('address').value || "{Your full address}";
-  const contact = document.getElementById('phone').value || "{Your phone number}";
-  
-  const phoneNumber = "919360362776"; // Your WhatsApp number with country code
-
-  let message = `Hello, I’d like to place a custom poster order. Here are my details:%0A
-- Photo: ${photo}%0A
-- Poster Size: ${size}%0A
-- Quantity: ${quantity}%0A
-- Delivery Address: ${address}%0A
-- Contact Number: ${contact}%0A%0A
-Bulk Orders – Free Delivery%0A
-A4: ₹49 each | A3: ₹69 each%0A
-Delivery charges apply for single orders.%0A
-Online Payment Only And No Cash on Delivery%0A%0A
-Looking forward to your confirmation.%0A
-Thank you!`;
-
-  const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
-  window.open(whatsappURL, '_blank');
-}
-</script>
+      <!-- Add more categories as needed -->
+    </div>
+  </section>
 
 </body>
 </html>
