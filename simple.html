@@ -3,167 +3,119 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Posters</title>
+  <title>Document</title>
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #ece9e6, #ffffff);
-      margin: 0;
-      padding: 20px;
-      text-align: center;
-    }
+    .why-choose-us {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f5f5f5;
+}
 
-    .products-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-      max-width: 1200px;
-      margin: auto;
-    }
+.why-choose-us h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  font-weight: bold;
+  color: #111;
+}
 
-    .product-box {
-      background: #fff;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      width: 250px;
-      transition: transform 0.3s ease;
-    }
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
 
-    .product-box:hover { transform: translateY(-5px); }
-    .product-box img {
-      width: 100%;
-      border-radius: 12px;
-      transition: transform 0.3s ease;
-    }
-    .product-box img:hover { transform: scale(1.05); }
+.feature-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
 
-    .price {
-      font-size: 18px;
-      font-weight: bold;
-      margin: 12px 0;
-      color: #ff4b5c;
-    }
+.feature-box:hover {
+  transform: translateY(-8px);
+}
 
-    .buy-btn {
-      background: linear-gradient(135deg, #25d366, #1ebe57);
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: bold;
-      transition: transform 0.3s ease;
-    }
-    .buy-btn:hover { transform: scale(1.05); }
+.feature-box i {
+  font-size: 40px;
+  color: #000;   
+  margin-bottom: 15px;
+}
 
-    /* Popup */
-    .popup {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.6);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-    .popup-content {
-      background: #fff;
-      padding: 20px;
-      border-radius: 15px;
-      text-align: center;
-      width: 320px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      animation: popupFade 0.3s ease;
-    }
-    @keyframes popupFade {
-      from { transform: translateY(-20px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
+.feature-box h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #111;
+}
 
-    .popup-content h2 { margin-bottom: 10px; color: #333; }
-    .popup-content p { margin-bottom: 15px; color: #555; }
+.feature-box p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
 
-    .popup-content a {
-      display: block;
-      margin: 8px 0;
-      padding: 10px;
-      border-radius: 30px;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: transform 0.2s ease;
-    }
-    .popup-content a:hover { transform: scale(1.05); }
-    .whatsapp-btn { background: #25d366; }
-    .email-btn { background: #007bff; }
-    .call-btn { background: #ff4b5c; }
-    .close-btn { margin-top: 10px; cursor: pointer; font-weight: bold; }
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .why-choose-us h2 {
+    font-size: 28px;
+  }
 
-    /* Responsive */
-    @media (max-width: 600px) {
-      .products-container { gap: 20px; }
-      .product-box { width: 80%; }
-    }
+  .feature-box {
+    padding: 15px;
+  }
+
+  .feature-box i {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .why-choose-us {
+    padding: 30px 15px;
+  }
+
+  .why-choose-us h2 {
+    font-size: 24px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .feature-box i {
+    font-size: 30px;
+  }
+}
+
   </style>
 </head>
 <body>
-
-  <h1>Our Poster Collection</h1>
-  <div class="products-container">
-    <div class="product-box">
-      <img src="a4.jpg" alt="Poster">
-      <p class="price">A4: ₹49 | A3: ₹69</p>
-      <button class="buy-btn" onclick="openPopup('Poster')">Buy Now</button>
+  <section class="why-choose-us">
+  <h2>WHY CHOOSE US?</h2>
+  <div class="features">
+    <div class="feature-box">
+      <i class="fas fa-print"></i>
+        <h3>High-Quality Printing</h3>
+        <p>Printed on premium materials to ensure vibrant colors and durability.</p>
     </div>
-
-    <div class="product-box">
-      <img src="a5.jpg" alt="Poster">
-      <p class="price">A4: ₹49 | A3: ₹69</p>
-      <button class="buy-btn" onclick="openPopup('Poster')">Buy Now</button>
+    <div class="feature-box">
+      <i class="fas fa-paint-brush"></i>
+      <h3>Custom Creations</h3>
+      <p>Upload your own images or designs and create personalized posters that reflect your personality.</p>
     </div>
-
-    <div class="product-box">
-      <img src="a6.jpg" alt="Poster">
-      <p class="price">A4: ₹49 | A3: ₹69</p>
-      <button class="buy-btn" onclick="openPopup('Poster')">Buy Now</button>
+    <div class="feature-box">
+      <i class="fas fa-tags"></i>
+      <h3>Exclusive Offers</h3>
+      <p>We’re constantly rolling out exciting offers to help you save big on your favorite designs.</p>
     </div>
-  </div>
-
-  <!-- Popup -->
-  <div class="popup" id="popup">
-    <div class="popup-content">
-      <h2 id="popup-title">Book Your Poster</h2>
-      <p>Choose how you want to contact us to place your order.</p>
-      <a id="whatsapp-link" class="whatsapp-btn" href="#" target="_blank">📲 WhatsApp: +91 9360362776</a>
-      <a id="email-link" class="email-btn" href="#">📧 Email: dhanushshankar74@gmail.com</a>
-      <a id="call-link" class="call-btn" href="#">📞 Call: +91 9360362776</a>
-      <div class="close-btn" onclick="closePopup()">Close</div>
-      <p style="margin-top: 10px; color: #333;">Available in all sizes</p>
+    <div class="feature-box">
+      <i class="fas fa-truck"></i>
+      <h3>Free Shipping</h3>
+      <p>Order in bulk and enjoy free delivery – shipping costs apply to single orders only.</p>
     </div>
   </div>
-
-  <p style="margin-top:30px;">Click below to see our complete poster collection</p>
-  <a class="buy-btn" href="https://drive.google.com/drive/folders/1eOQqpSxNazVsCDAUmxPWLX8T9Z8G70oS?usp=sharing" target="_blank">View Posters</a>
-
-  <script>
-    function openPopup(productName) {
-      const phone = "+919360362776"; 
-      const email = "dhanushshankar74@gmail.com"; 
-
-      document.getElementById("popup").style.display = "flex";
-      document.getElementById("popup-title").innerText = `Book ${productName}`;
-      document.getElementById("whatsapp-link").href = `https://wa.me/${phone}?text=I%20want%20to%20buy%20${encodeURIComponent(productName)}`;
-      document.getElementById("email-link").href = `mailto:${email}?subject=Booking%20${encodeURIComponent(productName)}`;
-      document.getElementById("call-link").href = `tel:${phone}`;
-    }
-
-    function closePopup() {
-      document.getElementById("popup").style.display = "none";
-    }
-  </script>
+</section>
 
 </body>
 </html>

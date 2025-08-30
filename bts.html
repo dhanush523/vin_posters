@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poster Product Box</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ece9e6, #ffffff);
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    /* Product container - 3 columns desktop */
+    .products-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto 10%;
+    }
+
+    /* Product box */
+    .product-box {
+      background: #fff;
+      padding: 15px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .product-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-box img {
+      width: 100%;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    /* .product-box img:hover {
+      transform: scale(1.05);
+    } */
+
+    .price {
+      font-size: 14px;
+      color: #ff4b5c;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+
+    .buy-btn {
+      background: linear-gradient(135deg, #25d366, #1ebe57);
+      color: white;
+      padding: 8px 10px;
+      border: none;
+      border-radius: 40px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+
+    .buy-btn:hover {
+      background: linear-gradient(135deg, #1ebe57, #25d366);
+    }
+
+    /* Popup Styling */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .popup-content {
+      background: #fff;
+      padding: 25px;
+      border-radius: 15px;
+      text-align: center;
+      width: 350px;
+      max-width: 90%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      animation: popupFade 0.3s ease;
+    }
+
+    @keyframes popupFade {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .popup-content h2 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .popup-content p {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .popup-content a {
+      display: block;
+      margin: 10px 0;
+      padding: 12px;
+      border-radius: 30px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.2s ease;
+    }
+
+    .popup-content a:hover {
+      transform: scale(1.05);
+    }
+
+    .whatsapp-btn { background: #25d366; }
+    .email-btn { background: #007bff; }
+    .call-btn { background: #ff4b5c; }
+
+    .close-btn {
+      margin-top: 15px;
+      cursor: pointer;
+      color: #333;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    /* View Poster Button */
+    .btn {
+      display: inline-block;
+      padding: 10px 24px;
+      background-color: #0e0c0c;
+      color: #ffffff;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      transition: 0.3s ease;
+      border: 2px solid transparent;
+      margin-top: 20px;
+    }
+
+    .btn:hover {
+      background-color: #ffffff;
+      color: #131111;
+      border-color: #000;
+    }
+
+    /* Responsive: 2 columns on mobile */
+    @media (max-width: 768px) {
+      .products-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+      }
+    }
+
+    @media (max-width: 500px) {
+      .products-container {
+        grid-template-columns: repeat(2, 1fr); /* still 2 columns */
+        gap: 15px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Our Collection of Posters</h1>
+<p style="font-size: 14px;color: #ff0000;">"Please mention the poster code when ordering."</p>
+<p style="font-size: 14px;">A4 Size-₹49&nbsp;&nbsp;||&nbsp;&nbsp;A3 Size-₹69</p>
+<br>
+<br>
+  <!-- Products -->
+  <div class="products-container">
+    <div class="product-box">
+      <img src="bst1.jpg" alt="Poster">
+      <p class="price">BST1</p>
+      <button class="buy-btn" onclick="openPopup('Beautiful Poster')">Buy Now</button>
+    </div>
+
+    <div class="product-box">
+      <img src="bts2.jpg" alt="Poster">
+      <p class="price">BST2</p>
+      <button class="buy-btn" onclick="openPopup('Beautiful Poster')">Buy Now</button>
+    </div>
+
+    <div class="product-box">
+      <img src="bts3.jpg" alt="Poster">
+      <p class="price">BST3</p>
+      <button class="buy-btn" onclick="openPopup('Beautiful Poster')">Buy Now</button>
+    </div>
+
+    <div class="product-box">
+      <img src="bts4.jpg" alt="Poster">
+      <p class="price">BST4</p>
+      <button class="buy-btn" onclick="openPopup('Beautiful Poster')">Buy Now</button>
+    </div>
+
+    <div class="product-box">
+      <img src="bts5.jpg" alt="Poster">
+      <p class="price">BST5</p>
+      <button class="buy-btn" onclick="openPopup('Beautiful Poster')">Buy Now</button>
+    </div>
+
+    <div class="product-box">
+      <img src="bts6.jpg" alt="Poster">
+      <p class="price">BST6</p>
+      <button class="buy-btn" onclick="openPopup('Beautiful Poster')">Buy Now</button>
+    </div>
+
+   
+    
+
+    
+  </div>
+
+  <!-- Popup -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h2 id="popup-title">Book Your Poster</h2>
+      <p>Select your preferred way to contact us and place your order.</p>
+      <a id="whatsapp-link" class="whatsapp-btn" href="#" target="_blank">📲 WhatsApp</a>
+<a id="email-link" class="email-btn" href="#" onclick="openbuy(event)">📧 Email </a>   
+<a id="call-link" class="call-btn" href="#">📞 Call</a>
+      <div class="close-btn" onclick="closePopup()">Close</div>
+      <p style="color: rgb(7, 7, 7);font-size: 18px;">“Available in every size you need.”</p>
+    </div>
+  </div>
+
+
+
+<a class="btn" href="#" onclick="openEmail(event)">📧Email </a>
+
+<a class="btn" href="https://wa.me/9360362776?text=Hello,%20I%20want%20to%20order%20a%20custom%20poster" target="_blank" id="whatsapp-links">
+  📲 WhatsApp
+</a>
+<p>If you’d like a custom poster, please email and whatsapp us </p>
+
+
+
+
+
+ <!-- // ------------------------------------------------------------------------------------------------------------------------------------ -->
+
+  <script>
+    function openPopup(productName) {
+      const phone = "+919360362776"; 
+      const email = "dhanushshankar74@gmail.com"; 
+
+      document.getElementById("popup").style.display = "flex";
+      document.getElementById("popup-title").innerText = `Book ${productName}`;
+document.getElementById("whatsapp-link").href = 
+  `https://wa.me/${phone}?text=${encodeURIComponent(
+    `Hello, I’d like to order a  poster. Here are my details:
+
+- Photo: [Image Code]
+- Poster Size: [A4 or A3]
+- Quantity: [Number of posters]
+- Delivery Address: [Full address]
+- Contact Number: [Your phone number]
+
+
+Bulk Orders – Free Delivery
+A4: ₹49 each | A3: ₹69 each
+Delivery charges apply for single orders.
+Online Payment Only And No Cash on Delivery
+
+Thank you!`
+  )}`;
+      document.getElementById("email-link").href = `mailto:${email}?subject=Booking%20${encodeURIComponent(productName)}`;
+      document.getElementById("call-link").href = `tel:${phone}`;
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+
+ // ------------------------------------------------------------------------------------------------------------------------------------
+   
+
+  function openEmail(event) {
+    event.preventDefault();
+    const email = "dhanushshankar74@gmail.com";
+          const phone = "+919360362776"; 
+
+    const subject = "Poster Request";
+    // const body = "Hello, I would like to order a custom poster,add photo in drive and size and quatity.";
+
+    // Fill these variables from your form/input
+const driveLink = "https://drive.google.com/your-photo-link";
+const size = "A3";
+const quantity = 2;
+const address = "No. 12, ABC Street, Chennai - 600001";
+const mobile = "+91 98765 43210";
+
+// Plain message (nice formatting)
+
+const body = `Hello, I’d like to place a custom poster order. and here are my details:
+
+- Photo: {"Image link or PDF"}
+- Poster Size: {"A4 or A3"}
+- Quantity: {"Number of posters"}
+- Delivery Address: {"Your full address"}
+- Contact Number: {"Your phone number"}
+
+
+Bulk Orders – Free Delivery
+A4: ₹49 each | A3: ₹69 each
+Delivery charges apply for single orders.
+Online Payment Only And No Cash on Delivery
+
+Looking forward to your confirmation.
+Thank you!`;
+
+    // Encode subject & body
+    const subjectEncoded = encodeURIComponent(subject);
+    const bodyEncoded = encodeURIComponent(body);
+
+    // Android Gmail App Intent
+    const androidIntent = `intent://compose?to=${email}&subject=${subjectEncoded}&body=${bodyEncoded}#Intent;scheme=mailto;package=com.google.android.gm;end`;
+
+    // Gmail Web link (fallback)
+    const gmailWeb = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subjectEncoded}&body=${bodyEncoded}`;
+
+    // Detect Android
+    if (/Android/i.test(navigator.userAgent)) {
+      // Open Gmail app directly
+      window.location.href = androidIntent;
+
+      // Safety fallback if Intent fails
+      setTimeout(() => {
+        window.open(gmailWeb, "_blank");
+      }, 800);
+    } else {
+      // For desktop, iOS, etc. → Gmail Web
+      window.open(gmailWeb, "_blank");
+    }
+  }
+
+// ------------------------------------------------------------------------------------------------------------------------------------
+  function openbuy(event) {
+    event.preventDefault();
+    const email = "dhanushshankar74@gmail.com";
+    const subject = "Poster Request ";
+    
+const body =  `Hello, I’d like to order a  poster. Here are my details:
+
+- Photo: [Image Code]
+- Poster Size: [A4 or A3]
+- Quantity: [Number of posters]
+- Delivery Address: [Full address]
+- Contact Number: [Your phone number]
+
+
+Bulk Orders – Free Delivery
+A4: ₹49 each | A3: ₹69 each
+Delivery charges apply for single orders.
+Online Payment Only And No Cash on Delivery
+
+Thank you!`
+    
+
+    // Encode subject & body
+    const subjectEncoded = encodeURIComponent(subject);
+    const bodyEncoded = encodeURIComponent(body);
+
+    // Android Gmail App Intent
+    const androidIntent = `intent://compose?to=${email}&subject=${subjectEncoded}&body=${bodyEncoded}#Intent;scheme=mailto;package=com.google.android.gm;end`;
+
+    // Gmail Web link (fallback)
+    const gmailWeb = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subjectEncoded}&body=${bodyEncoded}`;
+
+    // Detect Android
+    if (/Android/i.test(navigator.userAgent)) {
+      // Open Gmail app directly
+      window.location.href = androidIntent;
+
+      // Safety fallback if Intent fails
+      setTimeout(() => {
+        window.open(gmailWeb, "_blank");
+      }, 800);
+    } else {
+      // For desktop, iOS, etc. → Gmail Web
+      window.open(gmailWeb, "_blank");
+    }
+  }
+
+
+
+const phoneNumber = "919360362776"; // Replace with your WhatsApp number
+
+const message = `Hello, I’d like to place a custom poster order. and here are my details:%0A
+- Photo: {"Image link or PDF"}%0A
+- Poster Size: {"A4 or A3"}%0A
+- Quantity: {"Number of posters"}%0A
+- Delivery Address: {"Your full address"}%0A
+- Contact Number: {"Your phone number"}%0A%0A
+Bulk Orders – Free Delivery%0A
+A4: ₹49 each | A3: ₹69 each%0A
+Delivery charges apply for single orders.%0A
+Online Payment Only And No Cash on Delivery%0A%0A
+Looking forward to your confirmation.%0A
+Thank you!`;
+
+// Set the WhatsApp link dynamically
+document.getElementById("whatsapp-links").href = `https://wa.me/${phoneNumber}?text=${message}`;
+
+  
+  </script>
+
+
+</body>
+</html>
