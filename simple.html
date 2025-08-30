@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Why Choose Us</title>
+  <title>Responsive Footer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     * {
       margin: 0;
@@ -13,99 +14,120 @@
 
     body {
       font-family: Arial, sans-serif;
-      background-color: #fff;
-      color: #333;
-      line-height: 1.5;
+      background: #f5f5f5;
+      line-height: 1.6;
     }
 
-    h2 {
-      text-align: center;
-      font-size: 2rem;
-      font-weight: bold;
-      margin: 20px 0;
+    footer {
+      background: #111;
+      color: #fff;
+      padding: 40px 20px;
     }
 
-    .features {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-      padding: 20px;
+    .footer-container {
       max-width: 1200px;
-      margin: 0 auto;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
     }
 
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .card i {
-      font-size: 2rem;
-      color: #333;
-      margin-bottom: 10px;
-    }
-
-    .card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
+    .footer-section h3 {
+      margin-bottom: 15px;
+      font-size: 18px;
       font-weight: bold;
     }
 
-    .card p {
-      font-size: 1rem;
-      color: #555;
+    .footer-section p, 
+    .footer-section a {
+      color: #bbb;
+      font-size: 15px;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 8px;
+      transition: color 0.3s;
     }
 
-    /* Tablet */
-    @media (min-width: 600px) {
-      .features {
-        grid-template-columns: repeat(2, 1fr);
+    .footer-section a:hover {
+      color: #fff;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin-right: 10px;
+      color: #bbb;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      border-top: 1px solid #333;
+      padding-top: 20px;
+      font-size: 14px;
+      color: #bbb;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      footer {
+        text-align: ;
       }
-    }
-
-    /* Desktop */
-    @media (min-width: 992px) {
-      .features {
-        grid-template-columns: repeat(4, 1fr);
+      .social-icons a {
+        margin: 0 8px;
       }
     }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-  <h2>WHY CHOOSE US?</h2>
-  <div class="features">
-    <div class="card">
-      <i class="fas fa-print"></i>
-      <h3>High-Quality Printing</h3>
-      <p>Printed on premium materials to ensure vibrant colors and durability.</p>
+  <footer>
+    <div class="footer-container">
+      <!-- About Section -->
+      <div class="footer-section">
+        <h3>Vin Posters</h3>
+        <p>We design and print high-quality posters with a focus on creativity, durability, and customer satisfaction.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Products</a>
+        <a href="#">Contact</a>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p><i class="fas fa-map-marker-alt"></i> Chennai, India</p>
+        <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+        <p><i class="fas fa-envelope"></i> vinposters@gmail.com</p>
+      </div>
+
+      <!-- Social Media -->
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
     </div>
-    <div class="card">
-      <i class="fas fa-paint-brush"></i>
-      <h3>Custom Creations</h3>
-      <p>Upload your own images or designs to create posters that reflect your personality.</p>
+
+    <!-- Bottom Footer -->
+    <div class="footer-bottom">
+      &copy; 2025 Vin Posters. All Rights Reserved.
     </div>
-    <div class="card">
-      <i class="fas fa-tags"></i>
-      <h3>Exclusive Offers</h3>
-      <p>Enjoy regular deals and save big on your favorite designs.</p>
-    </div>
-    <div class="card">
-      <i class="fas fa-truck"></i>
-      <h3>Free Shipping</h3>
-      <p>Order in bulk and enjoy free delivery – shipping costs apply to single orders only.</p>
-    </div>
-  </div>
+  </footer>
 
 </body>
 </html>
