@@ -13,88 +13,99 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      padding: 20px;
+      background-color: #fff;
+      color: #333;
       line-height: 1.5;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 15px;
     }
 
     h2 {
       text-align: center;
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      margin-bottom: 30px;
+      font-size: 2rem;
       font-weight: bold;
-      color: #222;
+      margin: 20px 0;
     }
 
-    .why-choose {
+    .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: 1fr;
       gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .card {
       background: #fff;
-      padding: 20px;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      padding: 20px;
       text-align: center;
-      transition: transform 0.2s ease-in-out;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
       transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
 
     .card i {
-      font-size: clamp(30px, 5vw, 40px);
+      font-size: 2rem;
       color: #333;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
     .card h3 {
-      font-size: clamp(1.2rem, 3vw, 1.5rem);
+      font-size: 1.3rem;
       margin-bottom: 10px;
       font-weight: bold;
     }
 
     .card p {
-      font-size: clamp(0.9rem, 2.5vw, 1rem);
+      font-size: 1rem;
       color: #555;
+    }
+
+    /* Tablet */
+    @media (min-width: 600px) {
+      .features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Desktop */
+    @media (min-width: 992px) {
+      .features {
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <div class="container">
-    <h2>WHY CHOOSE US?</h2>
-    <div class="why-choose">
-      <div class="card">
-        <i class="fas fa-print"></i>
-        <h3>High-Quality Printing</h3>
-        <p>Printed on premium materials to ensure vibrant colors and durability.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-paint-brush"></i>
-        <h3>Custom Creations</h3>
-        <p>Upload your own images or designs to create posters that reflect your personality.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-tags"></i>
-        <h3>Exclusive Offers</h3>
-        <p>Enjoy regular deals and save big on your favorite designs.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-truck"></i>
-        <h3>Free Shipping</h3>
-        <p>Order in bulk and enjoy free delivery – shipping costs apply to single orders only.</p>
-      </div>
+
+  <h2>WHY CHOOSE US?</h2>
+  <div class="features">
+    <div class="card">
+      <i class="fas fa-print"></i>
+      <h3>High-Quality Printing</h3>
+      <p>Printed on premium materials to ensure vibrant colors and durability.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-paint-brush"></i>
+      <h3>Custom Creations</h3>
+      <p>Upload your own images or designs to create posters that reflect your personality.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-tags"></i>
+      <h3>Exclusive Offers</h3>
+      <p>Enjoy regular deals and save big on your favorite designs.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-truck"></i>
+      <h3>Free Shipping</h3>
+      <p>Order in bulk and enjoy free delivery – shipping costs apply to single orders only.</p>
     </div>
   </div>
+
 </body>
 </html>
