@@ -76,9 +76,9 @@
 
     .content {
     width: auto;
-    margin: 20px;
+    margin: 0px;
     text-align: center;
-    transform: translateY(25vh);
+    transform: translateY(22vh);
 }
 
 .content h1 {
