@@ -78,7 +78,7 @@
     width: auto;
     margin: 0px;
     text-align: center;
-    transform: translateY(22vh);
+    transform: translateY(25vh);
 }
 
 .content h1 {
@@ -160,7 +160,7 @@
 
       .btn {
         font-size: 16px;
-        padding: 10px 20px;
+        /* padding: 10px 20px; */
       }
     }
 
@@ -317,7 +317,7 @@ button:hover {
 
 /* <!-- -------------------------------------------------------------------------------------------- --> */
 
-* {
+/* * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -328,7 +328,7 @@ button:hover {
       background: #f9f9f9;
       color: #333;
       line-height: 1.6;
-    }
+    } */
 
     h1, h2, h3 {
       font-weight: bold;
