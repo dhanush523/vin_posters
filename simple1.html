@@ -1,253 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Poster Collection</title>
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: 'Poppins', sans-serif;
-    background: #f5f5f5;
-    text-align: center;
-    padding: 20px;
-  }
-
-  h1, h2 {
-    color: #0c0c0c;
-    margin-bottom: 20px;
-  }
-
-  p {
-    color: #555;
-    margin-bottom: 20px;
-  }
-
-  /* ------------------ PRODUCT GRID ------------------ */
-  .products-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto 50px;
-  }
-
-  .product-box {
-    background: #fff;
-    border-radius: 15px;
-    padding: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-  }
-
-  .product-box:hover {
-    transform: translateY(-5px);
-  }
-
-  .product-box img {
-    width: 100%;
-    height: 250px;      /* uniform height */
-    object-fit: cover;   /* ensures same size look */
-    border-radius: 12px;
-    margin-bottom: 10px;
-  }
-
-  .price {
-    font-size: 14px;
-    color: #ff4b5c;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-
-  .buy-btn {
-    background: linear-gradient(135deg, #25d366, #1ebe57);
-    color: white;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 40px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s ease;
-  }
-
-  .buy-btn:hover {
-    background: linear-gradient(135deg, #1ebe57, #25d366);
-  }
-
-  /* ------------------ CATEGORY GRID ------------------ */
-  .categories-section {
-    margin: 50px auto;
-  }
-
-  .categories-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-  }
-
-  .category-box {
-    width: 300px;
-    background: #fff;
-    border-radius: 28px;
-    text-align: center;
-    padding: 15px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-  }
-
-  .category-box:hover {
-    transform: translateY(-8px);
-  }
-
-  .category-img {
-    width: 100%;
-    height: 250px;      /* uniform size for all categories */
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 15px;
-  }
-
-  .category-box h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #222;
-  }
-
-  .category-box p {
-    font-size: 14px;
-    color: #555;
-    line-height: 1.5;
-    margin-bottom: 15px;
-  }
-
-  .explore-btn {
-    display: inline-block;
-    padding: 10px 24px;
-    background-color: #0e0c0c;
-    color: #fff;
-    border-radius: 30px;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 600;
-    transition: 0.3s ease;
-    border: 2px solid transparent;
-  }
-
-  .explore-btn:hover {
-    background-color: #fff;
-    color: #131111;
-    border-color: #000;
-  }
-
-  /* ------------------ RESPONSIVE ------------------ */
-  @media (max-width: 1024px) {
-    .products-container {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .categories-wrapper {
-      gap: 30px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .products-container {
-      grid-template-columns: 1fr; /* single column on small tablets/mobiles */
-      gap: 20px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - PosterWorld</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
 
-    .product-box img,
-    .category-img {
-      height: 220px;
+    body {
+      background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff4d4d);
+      color: #fff;
     }
 
-    .category-box {
-      width: 90%;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .product-box img,
-    .category-img {
-      height: 180px;
+    /* Hero Section */
+    .contact-hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: rgba(0, 0, 0, 0.3);
     }
 
-    .category-box h3,
-    .product-box .price {
-      font-size: 16px;
+    .contact-hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
     }
 
-    .category-box p {
-      font-size: 12px;
+    .contact-hero p {
+      font-size: 1.2rem;
+      margin-top: 10px;
     }
 
-    .explore-btn, .buy-btn {
-      font-size: 13px;
-      padding: 8px 16px;
+    /* Contact Section */
+    .contact-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
     }
-  }
-</style>
+
+    .contact-card {
+      background: #fff;
+      color: #333;
+      width: 100%;
+      max-width: 1000px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    /* Contact Info */
+    .contact-info {
+      background: #ff4d4d;
+      color: #fff;
+      padding: 40px;
+    }
+
+    .contact-info h2 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    .contact-info p {
+      margin: 15px 0;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .contact-info i {
+      margin-right: 10px;
+      font-size: 1.3rem;
+    }
+
+    .social-links {
+      margin-top: 30px;
+    }
+
+    .social-links a {
+      font-size: 1.8rem;
+      margin-right: 15px;
+      color: #fff;
+      transition: transform 0.3s ease;
+    }
+
+    .social-links a:hover {
+      transform: scale(1.2);
+    }
+
+    /* Contact Form */
+    .contact-form {
+      padding: 40px;
+    }
+
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      margin-bottom: 15px;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .contact-form button {
+      background: #ff4d4d;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background: #e63e3e;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .contact-card {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-info, .contact-form {
+        text-align: center;
+      }
+
+      .contact-info p {
+        justify-content: center;
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 <body>
-
-  <h1>Our Collection of Posters</h1>
-  <p>A4 Size-₹49 || A3 Size-₹69</p>
-
-  <!-- ------------------ PRODUCTS ------------------ -->
-  <div class="products-container">
-    <div class="product-box">
-      <img src="c1.png" alt="Poster">
-      <p class="price">M001</p>
-      <button class="buy-btn">Buy Now</button>
-    </div>
-    <div class="product-box">
-      <img src="c2.png" alt="Poster">
-      <p class="price">M002</p>
-      <button class="buy-btn">Buy Now</button>
-    </div>
-    <div class="product-box">
-      <img src="c3.png" alt="Poster">
-      <p class="price">M003</p>
-      <button class="buy-btn">Buy Now</button>
-    </div>
-    <!-- Add more products as needed -->
-  </div>
-
-  <!-- ------------------ CATEGORIES ------------------ -->
-  <section class="categories-section">
-    <h2>Poster Categories</h2>
-    <p>Explore Different Types of Posters</p>
-
-    <div class="categories-wrapper">
-      <div class="category-box">
-        <img src="cinema.png" alt="Movie Posters" class="category-img">
-        <h3>Movie Posters</h3>
-        <p>Discover trending movie posters from your favorite films.</p>
-        <a href="cinema.html" class="explore-btn">Explore Movies</a>
-      </div>
-
-      <div class="category-box">
-        <img src="sports.png" alt="Sports Posters" class="category-img">
-        <h3>Sports Posters</h3>
-        <p>Celebrate your favorite players and teams.</p>
-        <a href="sport.html" class="explore-btn">Explore Sports</a>
-      </div>
-
-      <div class="category-box">
-        <img src="motivational.png" alt="Motivational Posters" class="category-img">
-        <h3>Motivational Posters</h3>
-        <p>Boost your day with inspiring motivational posters.</p>
-        <a href="motivational.html" class="explore-btn">Explore Motivation</a>
-      </div>
-
-      <!-- Add more categories as needed -->
-    </div>
+  <section class="contact-hero">
+    <h1>Let's Create Something Awesome</h1>
+    <p>Questions? Custom poster requests? We’d love to hear from you.</p>
   </section>
 
+  <section class="contact-section">
+    <div class="contact-card">
+      <!-- Left: Info -->
+      <div class="contact-info">
+        <h2>Get in Touch</h2>
+        <p><i class="fas fa-envelope"></i> support@posterworld.com</p>
+        <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+        <p><i class="fas fa-map-marker-alt"></i> Chennai, India</p>
+
+        <div class="social-links">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="contact-form">
+        <form action="#" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="text" name="subject" placeholder="Subject">
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
