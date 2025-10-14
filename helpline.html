@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Help Line</title>
+  <title>VIN POSTERS Help Line</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -11,16 +11,18 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 95vh;
       margin: 0;
+      padding: 10px;
     }
 
     .helpline-card {
       background: #fff;
       border-radius: 20px;
       box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-      padding: 30px;
-      width: 350px;
+      padding: 30px 20px;
+      width: 100%;
+      max-width: 400px;
       text-align: center;
       transition: transform 0.3s;
     }
@@ -30,9 +32,10 @@
     }
 
     .helpline-card h2 {
-      color: #000000;
+      color: #000;
       font-size: 24px;
       margin-bottom: 15px;
+      word-wrap: break-word;
     }
 
     .helpline-card p.intro {
@@ -51,6 +54,7 @@
       margin: 10px 0;
       font-size: 15px;
       transition: background 0.3s;
+      flex-wrap: wrap;
     }
 
     .contact-item:hover {
@@ -65,6 +69,26 @@
     .contact-item a {
       color: #060606;
       text-decoration: none;
+      word-break: break-word;
+    }
+
+    @media (max-width: 500px) {
+      .helpline-card {
+        padding: 20px 15px;
+      }
+
+      .helpline-card h2 {
+        font-size: 20px;
+      }
+
+      .helpline-card p.intro {
+        font-size: 14px;
+      }
+
+      .contact-item {
+        font-size: 14px;
+        padding: 10px 12px;
+      }
     }
   </style>
 </head>
@@ -80,17 +104,39 @@
     </div>
 
     <div class="contact-item">
-  <span>📧</span> 
-  <a href="https://mail.google.com/mail/?view=cm&to=dhanushshankar74@gmail.com&su=Help%20Request%20from%20VIN%20POSTERS&body=Hello%20Support%2C%0A%0AI%20am%20facing%20the%20following%20issue%3A%0A%0A[Describe%20your%20problem%20here]%0A%0AThank%20you." target="_blank">
-    dhanushshankar74@gmail.com
-  </a>
-</div>
+      <span>📧</span> 
+      <a id="email-link" href="#">
+        dhanushshankar74@gmail.com
+      </a>
+    </div>
 
     <div class="contact-item">
       <span>🕐</span> 
       Mon – Sat | 9:00 AM – 8:00 PM
     </div>
   </div>
+
+  <script>
+    const email = "dhanushshankar74@gmail.com";
+    const subject = "Help Request from VIN POSTERS";
+    const body = "Hello Support,\n\nI am facing the following issue:\n\n[Describe your problem here]\n\nThank you.";
+    const encodedSubject = encodeURIComponent(subject);
+    const encodedBody = encodeURIComponent(body);
+
+    const link = document.getElementById("email-link");
+
+    // Detect mobile devices
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    if(isMobile){
+      // Open Gmail app or default mail app on mobile
+      link.href = `mailto:${email}?subject=${encodedSubject}&body=${encodedBody}`;
+    } else {
+      // Open Gmail web on desktop
+      link.href = `https://mail.google.com/mail/?view=cm&to=${email}&su=${encodedSubject}&body=${encodedBody}`;
+      link.target = "_blank"; // open in new tab
+    }
+  </script>
 
 </body>
 </html>
