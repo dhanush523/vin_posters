@@ -34,7 +34,7 @@
       <div class="content">
         <h3>Decorate walls with beauty that always lifts your mood.</h3>
         <p>Let Your Walls Tell Stories.</p>
-  <a href="s.html" class="btn">Shop Posters<span class="arrow">&nbsp;&nbsp;→</span></a>
+  <a href="category.html" class="btn">Shop Posters<span class="arrow">&nbsp;&nbsp;→</span></a>
       </div>
     </div>
   </section>
@@ -172,25 +172,31 @@
   </footer>  -->
  <div class="poster-image">
       <h2>Visual Size Reference</h2>
-      <img src="photo-and-picture-frame-size.jpeg" alt="Poster frame sizes">
+      <img src="price.jpg" alt="Poster frame sizes">
     </div>
   <div class="containers">
     <div class="sizes">
-      <div class="card"><h3>4 × 6 Inches</h3><div class="price">₹20 each | 30 pcs ₹399</div></div>
-      <div class="card"><h3>5 × 7 Inches</h3><div class="price">₹30 each | 30 pcs ₹499</div></div>
-      <div class="card"><h3>6 × 8 Inches</h3><div class="price">₹40 each | 20 pcs ₹599</div></div>
-      <div class="card"><h3>8 × 8 Inches</h3><div class="price">₹50 each | 20 pcs ₹699</div></div>
-      <div class="card"><h3>5 × 10 Inches</h3><div class="price">₹55 each</div></div>
+      <div class="card"><h3>A5</h3><div class="price">₹69 each | 5 pcs ₹300</div></div>
+      <div class="card"><h3>A4</h3><div class="price">₹49 each | 5 pcs ₹200</div></div>
+      <div class="card"><h3>A5</h3><div class="price">₹10 each | 5 pcs <br>₹45</div></div>
+      <div class="card"><h3>Custom Size</h3><div class="price">Based On The <br>Sizes</div></div>
+      <!-- <div class="card"><h3>5 × 10 Inches</h3><div class="price">₹55 each</div></div>
       <div class="card"><h3>8 × 10 Inches</h3><div class="price">₹60 each | 10 pcs ₹499</div></div>
       <div class="card"><h3>10 × 12 Inches</h3><div class="price">₹70 each</div></div>
       <div class="card"><h3>11 × 14 Inches</h3><div class="price">₹90 each</div></div>
       <div class="card"><h3>12 × 15 Inches</h3><div class="price">₹110 each</div></div>
       <div class="card"><h3>16 × 20 Inches</h3><div class="price">₹150 each</div></div>
-      <div class="card"><h3>20 × 24 Inches</h3><div class="price">₹200 each</div></div>
+      <div class="card"><h3>20 × 24 Inches</h3><div class="price">₹200 each</div></div> -->
     </div>
 
-    
+    <div style="text-align: center; margin-top: 30px;">
+    <a href="helpline.html" class="explore-btn">Help Line <span class="arrow">→</span></a>
   </div>
+
+  
+  </div>
+
+
 
   <footer>
     <div class="footer-container">
@@ -251,4 +257,43 @@
       const navLinks = document.getElementById("navLinks");
       navLinks.classList.toggle("active");
     }
+
+
+
+
+const helpBtn = document.getElementById("helpBtn");
+  const popup = document.getElementById("popup");
+  const closeBtn = document.getElementById("closeBtn");
+
+  // Show popup
+  helpBtn.addEventListener("click", () => {
+    popup.classList.add("active");
+  });
+
+  // Close popup
+  closeBtn.addEventListener("click", () => {
+    popup.classList.remove("active");
+  });
+
+  // Close when clicking outside box
+  popup.addEventListener("click", (e) => {
+    if (e.target === popup) {
+      popup.classList.remove("active");
+    }
+  });
+
+
+
+
+
+ function openPopup() {
+    document.getElementById("popup").style.display = "flex";
+  }
+
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+
+
+  
   </script>
