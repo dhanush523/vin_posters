@@ -111,12 +111,20 @@
     </div>
 
     <div class="contact-item">
+      <span>💬</span> 
+      <a id="whatsapp-link" href="#" target="_blank">
+        Chat on WhatsApp
+      </a>
+    </div>
+
+    <div class="contact-item">
       <span>🕐</span> 
       Mon – Sat | 9:00 AM – 8:00 PM
     </div>
   </div>
 
   <script>
+    // Email setup
     const email = "dhanushshankar74@gmail.com";
     const subject = "Help Request from VIN POSTERS";
     const body = "Hello Support,\n\nI am facing the following issue:\n\n[Describe your problem here]\n\nThank you.";
@@ -124,18 +132,20 @@
     const encodedBody = encodeURIComponent(body);
 
     const link = document.getElementById("email-link");
-
-    // Detect mobile devices
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
     if(isMobile){
-      // Open Gmail app or default mail app on mobile
       link.href = `mailto:${email}?subject=${encodedSubject}&body=${encodedBody}`;
     } else {
-      // Open Gmail web on desktop
       link.href = `https://mail.google.com/mail/?view=cm&to=${email}&su=${encodedSubject}&body=${encodedBody}`;
-      link.target = "_blank"; // open in new tab
+      link.target = "_blank";
     }
+
+    // WhatsApp setup
+    const whatsappNumber = "919360362776"; // Replace with your full number (without +)
+    const whatsappMessage = encodeURIComponent("Hello VIN POSTERS Support, I need help with...");
+    const whatsappLink = document.getElementById("whatsapp-link");
+    whatsappLink.href = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
   </script>
 
 </body>
