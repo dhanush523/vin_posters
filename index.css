@@ -679,14 +679,16 @@ line-height: 1.5;
     }
 
     /* Responsive Design */
-    @media (max-width: 768px) {
-      footer {
-        text-align: ;
-      }
-      .social-icons a {
-        margin: 0 8px;
-      }
-    }
+@media (max-width: 768px) {
+  footer {
+    
+  }
+
+  .social-icons a {
+    margin: 0 8px;
+  }
+}
+
 
 
 

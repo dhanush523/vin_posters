@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vin Posters</title>
-
-  <!-- Font Awesome for icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vin Posters Footer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     * {
@@ -19,111 +14,140 @@
     }
 
     body {
-      font-family: "Poppins", sans-serif;
+      font-family: Arial, sans-serif;
       background: #f5f5f5;
-      color: #fff;
+      line-height: 1.6;
     }
 
     footer {
       background: #111;
       color: #fff;
-      padding: 50px 20px;
+      padding: 50px 20px 30px;
     }
 
     .footer-container {
       max-width: 1200px;
       margin: auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 40px;
-    }
-
-    .footer-section {
-      flex: 1 1 250px;
-      min-width: 250px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
     }
 
     .footer-section h3 {
       margin-bottom: 15px;
       font-size: 18px;
-      font-weight: 600;
+      font-weight: bold;
       color: #fff;
     }
 
     .footer-section p,
     .footer-section a {
-      color: #ccc;
+      color: #bbb;
       font-size: 15px;
       text-decoration: none;
-      margin-bottom: 10px;
       display: block;
-      transition: 0.3s;
+      margin-bottom: 8px;
+      transition: color 0.3s ease;
     }
 
     .footer-section a:hover {
-      color: #00aced;
-    }
-
-    /* Social Icons */
-    .social-icons {
-      margin-top: 10px;
-      display: flex;
-      gap: 15px;
+      color: #fff;
     }
 
     .social-icons a {
+      display: inline-block;
+      margin-right: 12px;
       color: #bbb;
       font-size: 20px;
-      transition: 0.3s;
+      transition: color 0.3s ease;
     }
 
     .social-icons a:hover {
-      color: #00aced;
-      transform: translateY(-3px);
+      color: #fff;
     }
 
-    /* Footer Bottom */
     .footer-bottom {
-      /* text-align: center; */
-      /* margin-top: 40px; */
+      text-align: center;
+      margin-top: 40px;
       border-top: 1px solid #333;
-      padding-top: 15px;
+      padding-top: 20px;
       font-size: 14px;
-      color: #aaa;
+      color: #bbb;
     }
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
+    /* 📱 Responsive Design */
+
+    /* Medium Devices (Tablets) */
+    @media (max-width: 992px) {
       .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        /* gap: 30px; */
+        gap: 25px;
+      }
+    }
+
+    /* Small Devices (Mobiles) */
+    @media (max-width: 768px) {
+      footer {
+        padding: 40px 15px 25px;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
       }
 
       .footer-section {
-        min-width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .footer-section h3 {
+        margin-bottom: 10px;
       }
 
       .social-icons {
-        justify-content: center;
+        margin-top: 10px;
+      }
+
+      .social-icons a {
+        margin: 0 8px;
+        font-size: 22px;
+      }
+
+      .footer-bottom {
+        margin-top: 25px;
+        padding-top: 15px;
+      }
+    }
+
+    /* Extra Small Devices (Very Small Screens) */
+    @media (max-width: 480px) {
+      footer {
+        padding: 30px 10px 20px;
+      }
+
+      .footer-section p,
+      .footer-section a {
+        font-size: 14px;
+      }
+
+      .social-icons a {
+        font-size: 20px;
+        margin: 0 6px;
+      }
+
+      .footer-bottom {
+        font-size: 13px;
       }
     }
   </style>
 </head>
-
 <body>
+
   <footer>
     <div class="footer-container">
-      <!-- About -->
+      <!-- About Section -->
       <div class="footer-section">
         <h3>Vin Posters</h3>
-        <p>
-          We design and print high-quality posters with a focus on creativity,
-          durability, and customer satisfaction.
-        </p>
+        <p>We design and print high-quality posters with a focus on creativity, durability, and customer satisfaction.</p>
       </div>
 
       <!-- Quick Links -->
@@ -135,7 +159,7 @@
         <a href="helpline.html">Contact</a>
       </div>
 
-      <!-- Contact -->
+      <!-- Contact Section -->
       <div class="footer-section">
         <h3>Contact Us</h3>
         <p><i class="fas fa-map-marker-alt"></i> Chennai, India</p>
@@ -143,30 +167,36 @@
         <p><i class="fas fa-envelope"></i> vinposters@gmail.com</p>
       </div>
 
-      <!-- Social -->
+      <!-- Social Media -->
       <div class="footer-section">
         <h3>Follow Us</h3>
         <div class="social-icons">
           <a href="#"><i class="fab fa-facebook"></i></a>
-          <a
-            href="https://www.instagram.com/vin_posters?igsh=MWcyZmdlc3Y3cG1zZQ=="
-            target="_blank"
-            ><i class="fab fa-instagram"></i
-          ></a>
-          <a href="mailto:postersvin@gmail.com"><i class="far fa-envelope"></i></a>
-          <a
-            href="https://wa.me/9360362776?text=Hello%20VIN%20POSTERS%2C%20I%20need%20help!"
-            target="_blank"
-            ><i class="fab fa-whatsapp"></i
-          ></a>
+          <a href="https://www.instagram.com/vin_posters?igsh=MWcyZmdlc3Y3cG1zZQ=="><i class="fab fa-instagram"></i></a>
+          <a href="#" onclick="openGmail()" target="_blank">
+            <i class="far fa-envelope"></i>
+          </a>
+          <a href="https://wa.me/9360362776?text=Hello%20VIN%20POSTERS%2C%20I%20need%20help!" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+          </a>
         </div>
       </div>
     </div>
 
-    <!-- Bottom -->
+    <!-- Bottom Footer -->
     <div class="footer-bottom">
       &copy; 2025 Vin Posters. All Rights Reserved.
     </div>
+
+    <script>
+      function openGmail() {
+        window.location.href = "mailto:postersvin@gmail.com";
+        setTimeout(() => {
+          window.open("https://mail.google.com/mail/?view=cm&fs=1&to=postersvin@gmail.com", "_blank");
+        }, 500);
+      }
+    </script>
   </footer>
+
 </body>
 </html>
