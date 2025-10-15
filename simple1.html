@@ -75,69 +75,77 @@
       color: #bbb;
     }
 
-    /* 📱 Responsive Design */
+    /* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+  footer {
+    /* text-align: center; */
+    padding: 35px 15px;
+  }
 
-    /* Medium Devices (Tablets) */
-    @media (max-width: 992px) {
-      .footer-container {
-        gap: 25px;
-      }
-    }
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    gap: 20px;
+  }
 
-    /* Small Devices (Mobiles) */
-    @media (max-width: 768px) {
-      footer {
-        padding: 40px 15px 25px;
-      }
+  .footer-section {
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 10px;
+  }
 
-      .footer-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
+  .footer-section h3 {
+    margin-bottom: 10px;
+  }
 
-      .footer-section {
-        margin-bottom: 10px;
-      }
+  .footer-section p,
+  .footer-section a {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
 
-      .footer-section h3 {
-        margin-bottom: 10px;
-      }
+  .social-icons {
+    margin-top: 10px;
+  }
 
-      .social-icons {
-        margin-top: 10px;
-      }
+  .social-icons a {
+    margin: 0 10px;
+    font-size: 20px;
+  }
 
-      .social-icons a {
-        margin: 0 8px;
-        font-size: 22px;
-      }
+  .footer-bottom {
+    margin-top: 25px;
+    padding-top: 15px;
+    font-size: 13px;
+  }
+}
 
-      .footer-bottom {
-        margin-top: 25px;
-        padding-top: 15px;
-      }
-    }
+/* 🧭 Extra Small Screens (below 480px) */
+@media (max-width: 480px) {
+  footer {
+    padding: 25px 10px;
+  }
 
-    /* Extra Small Devices (Very Small Screens) */
-    @media (max-width: 480px) {
-      footer {
-        padding: 30px 10px 20px;
-      }
+  .footer-section {
+    max-width: 300px;
+  }
 
-      .footer-section p,
-      .footer-section a {
-        font-size: 14px;
-      }
+  .footer-section p,
+  .footer-section a {
+    font-size: 13px;
+  }
 
-      .social-icons a {
-        font-size: 20px;
-        margin: 0 6px;
-      }
+  .social-icons a {
+    font-size: 18px;
+    margin: 0 8px;
+  }
 
-      .footer-bottom {
-        font-size: 13px;
-      }
-    }
+  .footer-bottom {
+    font-size: 12.5px;
+  }
+}
+
   </style>
 </head>
 <body>
