@@ -1,187 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Footer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <style>
-    /* Universal Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Footer</title>
+  <style>
+    .footer {
+      background-color: #060606;
+      color: #ffffff;
+      padding: 40px 0 20px;
+      font-family: Arial, sans-serif;
+    }
 
-/* Base Body Styles (Good Practice) */
-body {
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
-    line-height: 1.6;
-}
-
-/* ------------------------------------------- */
-/* 1. Base Footer Styles (Desktop/Grid)        */
-/* ------------------------------------------- */
-footer {
-    background: #111;
-    color: #fff;
-    padding: 40px 20px;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: auto;
-    /* GRID LAYOUT: Automatically creates columns (min 250px wide) and wraps */
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-.footer-section h3 {
-    margin-bottom: 15px;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.footer-section p, 
-.footer-section a {
-    color: #bbb;
-    font-size: 15px;
-    text-decoration: none;
-    display: block; /* Ensures links stack vertically */
-    margin-bottom: 8px;
-    transition: color 0.3s;
-}
-
-.footer-section a:hover {
-    color: #fff;
-}
-
-/* Social Icons Styling */
-.social-icons a {
-    display: inline-block;
-    margin-right: 10px;
-    color: #bbb;
-    font-size: 18px;
-    transition: color 0.3s;
-}
-
-.social-icons a:hover {
-    color: #fff;
-}
-
-/* Footer Bottom Styling */
-.footer-bottom {
-    text-align: center;
-    margin-top: 30px;
-    border-top: 1px solid #333;
-    padding-top: 20px;
-    font-size: 14px;
-    color: #bbb;
-}
-
-/* ------------------------------------------- */
-/* 2. Media Query for Tablet (Adjust Grid)     */
-/* ------------------------------------------- */
-@media (max-width: 768px) {
     .footer-container {
-        /* Allow smaller columns to fit 2-3 sections comfortably on tablets */
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-        gap: 25px;
-    }
-}
-
-/* ------------------------------------------- */
-/* 3. Media Query for Mobile (Single Column)   */
-/* ------------------------------------------- */
-@media (max-width: 480px) {
-    .footer-container {
-        /* FORCES all sections into a single, full-width column */
-        grid-template-columns: 1fr; 
-        gap: 30px; /* Adjust vertical spacing between sections */
+      display: flex;
+      justify-content: space-between;
+      max-width: 1300px;
+      margin: auto;
+      padding: 0 20px;
     }
 
-    .footer-section {
-        /* Center-align all content for clean mobile stacking */
-    }
-    
-    /* Re-center the Quick Links, but keep them as block for full click area */
-    .footer-section a {
-        display: block;
+    .footer-container div {
+      flex: 1 1 200px;
+      margin: 10px;
     }
 
-    /* Ensure social icons are centered when the section is centered */
-    .social-icons {
-        margin-top: 10px;
+    .footer h3 {
+      padding-bottom: 10px;
+      margin-bottom: 15px;
     }
 
-    .social-icons a {
-        /* Adjust spacing for centered icons */
-        margin: 0 10px;
+    .footer p, .footer li {
+      font-size: 14px;
+      line-height: 1.6;
     }
-    
+
+    .footer ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer a {
+      text-decoration: none;
+      color: #cccccc;
+    }
+
+    .footer a:hover {
+      color: #f39c12;
+    }
+
     .footer-bottom {
-        margin-top: 20px;
+      text-align: center;
+      padding-top: 15px;
+      border-top: 1px solid #444;
+      font-size: 13px;
     }
-}
-</style>
+
+    /* ---------- RESPONSIVE DESIGN ---------- */
+
+    /* Tablets (width ≤ 992px) */
+    @media (max-width: 992px) {
+      .footer-container {
+        flex-wrap: wrap;
+      }
+
+      .footer-container div {
+        flex: 1 1 45%;
+        margin: 20px 10px;
+      }
+
+      .footer h3 {
+        font-size: 18px;
+      }
+    }
+
+    /* Mobiles (width ≤ 600px) */
+    @media (max-width: 600px) {
+      .footer-container {
+        flex-direction: column;
+        padding: 0 30px;
+      }
+
+      .footer-container div {
+        flex: 1 1 100%;
+        margin: 15px 0;
+      }
+
+      .footer p, .footer li {
+        font-size: 15px;
+      }
+
+      .footer h3 {
+        font-size: 17px;
+      }
+
+      .footer-bottom {
+        font-size: 12px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>About Us</h3>
+        <p>We are a leading construction company delivering quality and trust for over 20 years. From residential to commercial, we build your dreams.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
 
-    <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>Vin Posters</h3>
-                <p>We design and print high-quality posters with a focus on creativity, durability, and customer satisfaction.</p>
-            </div>
-
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <a href="#Home">Home</a>
-                <a href="#categories">Product</a>
-                <a href="#About">About</a>
-                <a href="helpline.html">Contact</a>
-            </div>
-
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Chennai, India</p>
-                <p><i class="fas fa-phone"></i> ‪+91 9360362776‬</p>
-                <p><i class="fas fa-envelope"></i> vinposters@gmail.com</p>
-            </div>
-
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/vin_posters?igsh=MWcyZmdlc3Y3cG1zZQ==" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="#" onclick="openGmail()" target="_blank" title="Send Email">
-                        <i class="far fa-envelope"></i>
-                    </a>
-                    <a href="https://wa.me/9360362776?text=Hello%20VIN%20POSTERS%2C%20I%20need%20help!" target="_blank" title="Chat on WhatsApp">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            &copy; 2025 Vin Posters. All Rights Reserved.
-        </div>
-    </footer>
-
-    <script>
-        function openGmail() {
-            // Open a mail client (for desktop or apps)
-            window.location.href = "mailto:postersvin@gmail.com";
-            
-            // Optional: Fallback for systems that don't auto-open mail client well
-            // setTimeout(() => {
-            //   window.open("https://mail.google.com/mail/?view=cm&fs=1&to=postersvin@gmail.com", "_blank");
-            // }, 500);
-        }
-    </script>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p>📍 Jawahar Street, Chennai</p>
+        <p>📞 +91 9360362776</p>
+        <p>✉️ dhanushshankar74@gmail.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Builder Co. All Rights Reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
