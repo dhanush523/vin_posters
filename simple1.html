@@ -1,188 +1,165 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us - PosterWorld</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+<footer>
+  <div class="footer-container">
+    <!-- About Section -->
+    <div class="footer-section about">
+      <h3>Vin Posters</h3>
+      <p>
+        We design and print high-quality posters with a focus on creativity,
+        durability, and customer satisfaction.
+      </p>
+    </div>
 
-    body {
-      background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff4d4d);
-      color: #fff;
-    }
+    <!-- Quick Links -->
+    <div class="footer-section links">
+      <h3>Quick Links</h3>
+      <a href="#Home">Home</a>
+      <a href="#categories">Product</a>
+      <a href="#About">About</a>
+      <a href="helpline.html">Contact</a>
+    </div>
 
-    /* Hero Section */
-    .contact-hero {
+    <!-- Contact Section -->
+    <div class="footer-section contact">
+      <h3>Contact Us</h3>
+      <p><i class="fas fa-map-marker-alt"></i> Chennai, India</p>
+      <p><i class="fas fa-phone"></i> +91 9360362776</p>
+      <p><i class="fas fa-envelope"></i> vinposters@gmail.com</p>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-section social">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a
+          href="https://www.instagram.com/vin_posters?igsh=MWcyZmdlc3Y3cG1zZQ=="
+          ><i class="fab fa-instagram"></i
+        ></a>
+
+        <a href="#" onclick="openGmail()" target="_blank">
+          <i class="far fa-envelope"></i>
+        </a>
+
+        <a
+          href="https://wa.me/9360362776?text=Hello%20VIN%20POSTERS%2C%20I%20need%20help!"
+          target="_blank"
+        >
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Footer -->
+  <div class="footer-bottom">
+    &copy; 2025 Vin Posters. All Rights Reserved.
+  </div>
+
+  <script>
+    function openGmail() {
+      // Try to open Gmail app
+      window.location.href = "mailto:postersvin@gmail.com";
+
+      // Fallback for desktop browsers
+      setTimeout(() => {
+        window.open(
+          "https://mail.google.com/mail/?view=cm&fs=1&to=postersvin@gmail.com",
+          "_blank"
+        );
+      }, 500);
+    }
+  </script>
+</footer>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Poppins", Arial, sans-serif;
+    background: #f5f5f5;
+  }
+
+  footer {
+    background: #111;
+    color: #fff;
+    padding: 50px 20px 20px;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 40px;
+  }
+
+  .footer-section h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .footer-section p,
+  .footer-section a {
+    color: #bbb;
+    font-size: 15px;
+    text-decoration: none;
+    line-height: 1.6;
+    transition: 0.3s ease;
+  }
+
+  .footer-section a:hover {
+    color: #00ffcc;
+  }
+
+  .social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #bbb;
+    font-size: 20px;
+    transition: 0.3s;
+  }
+
+  .social-icons a:hover {
+    color: #00ffcc;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+    font-size: 14px;
+    color: #aaa;
+    margin-top: 30px;
+  }
+
+  /* ✅ Responsive Design */
+  @media (max-width: 768px) {
+    footer {
       text-align: center;
-      padding: 80px 20px;
-      background: rgba(0, 0, 0, 0.3);
+      padding: 40px 10px;
     }
 
-    .contact-hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
+    .footer-container {
+      grid-template-columns: 1fr;
     }
 
-    .contact-hero p {
-      font-size: 1.2rem;
+    .footer-section {
+      margin-bottom: 25px;
+    }
+
+    .social-icons {
       margin-top: 10px;
     }
 
-    /* Contact Section */
-    .contact-section {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 60px 20px;
+    .social-icons a {
+      margin: 0 8px;
+      font-size: 22px;
     }
-
-    .contact-card {
-      background: #fff;
-      color: #333;
-      width: 100%;
-      max-width: 1000px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    }
-
-    /* Contact Info */
-    .contact-info {
-      background: #ff4d4d;
-      color: #fff;
-      padding: 40px;
-    }
-
-    .contact-info h2 {
-      margin-bottom: 20px;
-      font-size: 2rem;
-    }
-
-    .contact-info p {
-      margin: 15px 0;
-      font-size: 1.1rem;
-      display: flex;
-      align-items: center;
-    }
-
-    .contact-info i {
-      margin-right: 10px;
-      font-size: 1.3rem;
-    }
-
-    .social-links {
-      margin-top: 30px;
-    }
-
-    .social-links a {
-      font-size: 1.8rem;
-      margin-right: 15px;
-      color: #fff;
-      transition: transform 0.3s ease;
-    }
-
-    .social-links a:hover {
-      transform: scale(1.2);
-    }
-
-    /* Contact Form */
-    .contact-form {
-      padding: 40px;
-    }
-
-    .contact-form form {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      margin-bottom: 15px;
-      padding: 12px;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      font-size: 1rem;
-      outline: none;
-    }
-
-    .contact-form button {
-      background: #ff4d4d;
-      color: #fff;
-      padding: 12px;
-      border: none;
-      border-radius: 10px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .contact-form button:hover {
-      background: #e63e3e;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .contact-card {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-info, .contact-form {
-        text-align: center;
-      }
-
-      .contact-info p {
-        justify-content: center;
-      }
-
-      .social-links {
-        justify-content: center;
-      }
-    }
-  </style>
-</head>
-<body>
-  <section class="contact-hero">
-    <h1>Let's Create Something Awesome</h1>
-    <p>Questions? Custom poster requests? We’d love to hear from you.</p>
-  </section>
-
-  <section class="contact-section">
-    <div class="contact-card">
-      <!-- Left: Info -->
-      <div class="contact-info">
-        <h2>Get in Touch</h2>
-        <p><i class="fas fa-envelope"></i> support@posterworld.com</p>
-        <p><i class="fas fa-phone"></i> +91 98765 43210</p>
-        <p><i class="fas fa-map-marker-alt"></i> Chennai, India</p>
-
-        <div class="social-links">
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-pinterest"></i></a>
-          <a href="#"><i class="fab fa-tiktok"></i></a>
-        </div>
-      </div>
-
-      <!-- Right: Form -->
-      <div class="contact-form">
-        <form action="#" method="POST">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
-          <input type="text" name="subject" placeholder="Subject">
-          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
-      </div>
-    </div>
-  </section>
-</body>
-</html>
+  }
+</style>
