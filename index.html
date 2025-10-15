@@ -228,9 +228,23 @@
         <div class="social-icons">
           <a href="#"><i class="fab fa-facebook"></i></a>
           <a href="https://www.instagram.com/vin_posters?igsh=MWcyZmdlc3Y3cG1zZQ=="><i class="fab fa-instagram"></i></a>
-<a href="https://mail.google.com/mail/?view=cm&fs=1&to=postersvin@gmail.com&su=Help%20Request&body=Hello%20VIN%20POSTERS%2C%20I%20need%20assistance%20with..." target="_blank">
+<a href="#" onclick="openGmail()" target="_blank">
   <i class="far fa-envelope"></i>
 </a>
+
+
+<script>
+  function openGmail() {
+    // Try to open Gmail app
+    window.location.href = "mailto:postersvin@gmail.com";
+    
+    // As fallback (desktop browsers)
+    setTimeout(() => {
+      window.open("https://mail.google.com/mail/?view=cm&fs=1&to=postersvin@gmail.com", "_blank");
+    }, 500);
+  }
+</script>
+
 
 <a href="https://wa.me/9360362776?text=Hello%20VIN%20POSTERS%2C%20I%20need%20help!" target="_blank">
   <i class="fab fa-whatsapp"></i>
@@ -295,5 +309,24 @@ const helpBtn = document.getElementById("helpBtn");
   }
 
 
+
+    function openGmail() {
+    const email = "postersvin@gmail.com";
+    const subject = "Help Request from VIN POSTERS";
+    const body = "Hello VIN POSTERS, I need assistance ";
+    
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if (isMobile) {
+      // 📱 Mobile → open Gmail app (mailto:)
+      window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+    } else {
+      // 💻 Desktop → open Gmail web
+      window.open(
+        `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`,
+        "_blank"
+      );
+    }
+  }
   
   </script>
