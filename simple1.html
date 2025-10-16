@@ -4,8 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Responsive Footer</title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   <style>
     /* 🌑 General Footer Style */
     footer {
@@ -15,7 +13,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      gap: 10px; /* 🔹 Adds gap between sections */
+      gap: 100px; /* 🔹 Adds gap between sections */
     }
 
     footer div {
@@ -59,6 +57,7 @@
     /* 📱 Contact Icons */
     .contact-info p {
       display: flex;
+      align-items: center;
       gap: 8px;
     }
 
@@ -90,7 +89,8 @@
     @media (max-width: 720px) {
       footer {
         flex-direction: column;
-        /* gap: 30px; */
+        text-align: center;
+        gap: 30px;
       }
 
       footer div {
@@ -111,7 +111,16 @@
       <p>We are a leading construction company delivering quality and trust for over 20 years. From residential to commercial, we build your dreams.</p>
     </div>
 
-    
+    <div>
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
 
     <div class="contact-info">
       <h3>Contact Us</h3>
@@ -120,18 +129,13 @@
       <p>✉️ dhanushshankar74@gmail.com</p>
     </div>
 
-    <!-- Social Media -->
-    <div class="footer-section">
+    <div>
       <h3>Follow Us</h3>
       <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/vin_posters?igsh=MWcyZmdlc3Y3cG1zZQ=="><i class="fab fa-instagram"></i></a>
-        <a href="#" onclick="openGmail()" target="_blank">
-          <i class="far fa-envelope"></i>
-        </a>
-        <a href="https://wa.me/9360362776?text=Hello%20VIN%20POSTERS%2C%20I%20need%20help!" target="_blank">
-          <i class="fab fa-whatsapp"></i>
-        </a>
+        <a href="#"><i>🌐</i></a>
+        <a href="#"><i>📷</i></a>
+        <a href="#"><i>✉️</i></a>
+        <a href="#"><i>💬</i></a>
       </div>
     </div>
   </footer>
