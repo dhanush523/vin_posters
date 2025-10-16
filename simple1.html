@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Responsive Footer</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     .footer {
       background-color: #060606;
@@ -98,6 +100,18 @@
         font-size: 12px;
       }
     }
+
+    .social-icons a {
+      display: inline-block;
+      margin-right: 10px;
+      color: #bbb;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -107,7 +121,7 @@
         <h3>About Us</h3>
         <p>We are a leading construction company delivering quality and trust for over 20 years. From residential to commercial, we build your dreams.</p>
       </div>
-      <div class="footer-links">
+      <!-- <div class="footer-links">
         <h3>Quick Links</h3>
         <ul>
           <li><a href="#">Home</a></li>
@@ -116,25 +130,32 @@
           <li><a href="#">Projects</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
-      </div>
+      </div> -->
 
-      <div class="footer-links">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
+      
       <div class="footer-contact">
         <h3>Contact Us</h3>
         <p>📍 Jawahar Street, Chennai</p>
         <p>📞 +91 9360362776</p>
         <p>✉️ dhanushshankar74@gmail.com</p>
       </div>
+
+      <div class="footer-section">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/vin_posters?igsh=MWcyZmdlc3Y3cG1zZQ=="><i class="fab fa-instagram"></i></a>
+        <a href="#" onclick="openGmail()" target="_blank">
+          <i class="far fa-envelope"></i>
+        </a>
+        <a href="https://wa.me/9360362776?text=Hello%20VIN%20POSTERS%2C%20I%20need%20help!" target="_blank">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
     </div>
+    </div>
+
+    
     <div class="footer-bottom">
       <p>© 2025 Builder Co. All Rights Reserved.</p>
     </div>
